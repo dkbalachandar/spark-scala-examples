@@ -5,8 +5,9 @@ import org.apache.spark.{SparkConf, SparkContext}
 object TaxiDataAnalysis {
   def main(args: Array[String]) {
 
-    if (args.length < 2) {
+    if (args.length < 1) {
       println("Usage inputFile")
+      return
     }
     val conf = new SparkConf().setAppName("TAXI-DATA-ANALYSIS")
     //Scala Spark Context.
@@ -22,7 +23,6 @@ object TaxiDataAnalysis {
     val taxiLicenseCounts = taxiLicenseKey.reduceByKey((v1,v2)=>v1+v2)
     //Reduce by key
     for (pair <-taxiLicenseCounts.map(_.swap).top(5)) println("Driver License ID %s had %s Trips".format(pair._2, pair._1))
-
     sc.stop()
   }
 }

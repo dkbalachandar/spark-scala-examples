@@ -7,6 +7,7 @@ object WordReverse {
   def main(args: Array[String]) {
     if (args.length < 2) {
       println("Usage inputFile outputFile")
+      return
     }
     val inFile = args(0)
     val outFile = args(1)

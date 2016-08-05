@@ -6,10 +6,9 @@ Spark Word count and word reverse jobs in Scala
 4. Copy the input.txt[src/main/resources] to /usr/local/spark/spp folder
 5. Run with the below command
 
-  a) spark-submit --class com.spark.WordCount --master local spark-scala-examples-assembly-1.0.jar ./spp/input.txt ./spp/output1
+  a) spark-submit --class com.spark.WordCount --master local spark-scala-examples-assembly-1.0.jar file:///usr/local/spark/spp/input.txt file:///usr/local/spark/spp/output1
 
-  b) spark-submit --class com.spark.WordReverse --master local spark-scala-examples-assembly-1.0.jar /spp/input.txt /spp/output2
-
+  b) spark-submit --class com.spark.WordReverse --master local spark-scala-examples-assembly-1.0.jar file:///usr/local/spark/spp/input.txt file:///usr/local/spark/spp/output2
  
  6. Check the /usr/local/spark/spp folder and make sure that the output files are created
 
@@ -28,3 +27,8 @@ To run the spark job against Hadoop, then follow the below steps
   b) spark-submit --class com.spark.WordReverse --master local spark-scala-examples-assembly-1.0.jar /spark/input /spark/output
  
  6. Check the /spark/output folder and make sure that the output files are created
+
+=================================================================================================================================================================================
+
+Follow the above steps for running other spark Jobs
+ 
